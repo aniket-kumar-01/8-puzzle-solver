@@ -1,0 +1,219 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s, margin-left 0.3s;
+    /* Added margin-left transition */
+}
+
+/* Light mode styles */
+body:not(.dark) {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Dark mode styles */
+body.dark {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Side Menu Button */
+.menu-toggle {
+    /* background-color: #333333; */
+    background-color: inherit;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/* Side Menu */
+.side-menu {
+    background-color: #333333;
+    color: #ffffff;
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s;
+    z-index: 1;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.side-menu li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #555555;
+}
+
+/* Adjust side menu position when active */
+.menu-active .side-menu {
+    left: 0;
+}
+
+/* Content */
+.content {
+    display: flex; /* Use flexbox for layout */
+    padding-top: 70px; /* Add padding to the top to push content down below the navbar */
+}
+
+/* Input Section */
+.input-section {
+    flex: 0.3; /* Take up 50% of the available width */
+    padding: 20px; /* Add some padding for spacing */
+    background-color: inherit; /* Example background color, you can customize */
+    font-size: 1.6rem;
+}
+
+/* Visualization Section */
+.visualization-section {
+    flex: 1; /* Take up 50% of the available width */
+    padding: 20px; /* Add some padding for spacing */
+    background-color: #b8bdff42; /* Example background color, you can customize */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333333;
+    padding: 10px 0;
+    position: fixed;
+    /* Fixed position */
+    width: 100%;
+    height: 50px;
+    top: 0;
+    z-index: 2;
+    /* Ensure it's above other content */
+}
+
+/* Add styling for navbar links */
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+/* Style the links when hovered */
+.navbar a:hover {
+    background-color: #555555;
+}
+
+.navbar>.container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    /* Added flex display for centering */
+    /* Arrange items vertically */
+    /* flex-direction: column;  */
+    justify-content: space-between;
+    /* Added space between for proper alignment */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.logo {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Header */
+.header {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    opacity: 0;
+    /* Start with zero opacity */
+    transform: translateY(20px);
+    /* Move the element down initially */
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+
+.glass-nav {
+    background: rgba(0, 0, 0, 0.9);
+    /* Adjust the alpha (fourth) value for opacity */
+    backdrop-filter: blur(10px);
+    /* Adjust the blur amount for the glass effect */
+    /* border-radius: 10px; */
+    /* Rounded corners for the navbar */
+    /* padding: 10px; */
+}
+
+#mynetwork {
+    width: calc(100%);
+    height: calc(90vh);
+}
+
+#input-container {
+    margin: 0px;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.node-info{
+    padding-top: 10vh;
+}

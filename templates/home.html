@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Puzzle Solver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+
+<body>
+    <div id="app" :class="{'dark': darkTheme, 'menu-active': sideMenuActive}">
+        <!-- Navigation Bar with Toggle Theme Button -->
+        <nav class="navbar glass-nav">
+            <div class="container">
+                <button @click="toggleSideMenu" class="menu-toggle">&#9776; Menu</button>
+                <h1 class="logo">8 Puzzle Problem Solver</h1>
+                <button @click="toggleTheme" class="theme-toggle">Toggle Theme</button>
+            </div>
+        </nav>
+        <!-- Side Menu -->
+        <nav class="side-menu glass-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="input-section">
+            <div class="datainput">
+                <div class="input-container">
+                    <label for="initial-digits">Enter initial matrix:</label>
+                    <input type="text" id="initial-digits" maxlength="9" value="123406758">
+                    <!-- <input type="text" id="initial-digits" maxlength="9" value="724506831"> -->
+                </div>
+                <div class="input-container">
+                    <label for="final-digits">Enter final matrix:</label>
+                    <input type="text" id="final-digits" maxlength="9" value="123456780">
+                </div>
+                <div id="result"></div>
+            </div>
+            <button id="fetchData">Solve</button>
+
+            <!-- Add a section for displaying node information -->
+            <div class="node-info">
+                <h2>Node Information</h2>
+                <!-- <p><strong>Node ID:</strong> <span id="node-id">-</span></p> -->
+                <p><strong>Node Label:</strong> <span id="node-label">-</span></p>
+                <p><strong>Node Cost:</strong> <span id="node-cost">-</span></p>
+                <p><strong>Empty position:</strong> <span id="node-empty-pos">-</span></p>
+                <p><strong>Node Level:</strong> <span id="node-level">-</span></p>
+                
+            </div>
+        </div>
+
+        <div class="visualization-section">
+            <div id="mynetwork"></div>
+        </div>
+    </div>
+
+    <script src="static/app.js"></script>
+</body>
+
+</html>
