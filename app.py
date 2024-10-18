@@ -3,7 +3,7 @@
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash
 
 
-import cProfile
+# import cProfile
 
 from aStar import *
 
